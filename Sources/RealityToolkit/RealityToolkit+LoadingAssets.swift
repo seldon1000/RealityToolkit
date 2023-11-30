@@ -60,7 +60,7 @@ public extension RealityToolkit {
     static func loadEntity(
         contentsOf url: URL, withName resourceName: String? = nil,
         saveTo destination: URL? = nil, useCache: Bool = true,
-        using loadMethod: @escaping (@MainActor(_ contentsOf: URL, _: String?) throws -> Entity) = Entity.load
+        using loadMethod: @escaping (@MainActor(_ contentsOf: URL, _: String?) throws -> Entity)
     ) async throws -> Entity {
         let localUrl = try await RealityToolkit.downloadRemoteFile(
             contentsOf: url, saveTo: destination, useCache: useCache
